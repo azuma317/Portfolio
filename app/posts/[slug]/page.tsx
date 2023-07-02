@@ -1,26 +1,22 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { Post, allPosts } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 
-export async function getStaticPaths() {
-  const paths = allPosts.map((post) => post.url)
-  return {
-    paths,
-    fallback: false,
-  }
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const post = allPosts.find((post) => post._id === params.slug)
-  return {
-    props: {
-      post,
-    },
-  }
+async function getPosts() {
+  return allPosts
+    .sort((post1, post2) => (post1.date! > post2.date! ? -1 : 1))
+    .slice(0, 16)
 }
 
-const PostLayout = ({ post }: { post: Post }) => {
+export default function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params
+  const post = allPosts.find((post) => post._id === slug)!
   return (
     <>
       <Head>
@@ -28,14 +24,12 @@ const PostLayout = ({ post }: { post: Post }) => {
       </Head>
       <article className="mx-auto max-w-2xl py-16">
         <div className="mb-6 text-center">
-          <Link href="/">
-            <a className="text-center text-sm font-bold uppercase text-blue-700">Home</a>
-          </Link>
+          <Link href="/" className="text-center text-sm font-bold uppercase text-blue-700">Home</Link>
         </div>
         <div className="mb-6 text-center">
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
-          <time dateTime={post.date} className="text-sm text-slate-600">
-            {format(parseISO(post.date), 'LLLL d, yyyy')}
+          <time dateTime={post.createdDate!} className="text-sm text-slate-600">
+            {format(parseISO(post.createdDate!), 'LLLL d, yyyy')}
           </time>
         </div>
         <div className="cl-post-body" dangerouslySetInnerHTML={{ __html: post.body.html }}></div>
@@ -43,5 +37,3 @@ const PostLayout = ({ post }: { post: Post }) => {
     </>
   )
 }
-
-export default PostLayout
