@@ -15,7 +15,7 @@ export const Post = defineDatabase(() => ({
     },
   },
   properties: {
-    date: {
+    createdDate: {
       name: 'Created time',
     },
   },
