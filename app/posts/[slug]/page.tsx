@@ -28,8 +28,8 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
         <div className="mb-6 text-center">
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
-          <time dateTime={post.createdDate!} className="text-sm text-slate-600">
-            {format(parseISO(post.createdDate!), 'LLLL d, yyyy')}
+          <time dateTime={post.createdDate} className="text-sm text-slate-600">
+            {format(parseISO(post.createdDate), 'LLLL d, yyyy')}
           </time>
         </div>
         <div className="cl-post-body" dangerouslySetInnerHTML={{ __html: post.body.html }}></div>

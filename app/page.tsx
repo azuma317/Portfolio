@@ -10,20 +10,20 @@ function PostCard(post: Post) {
           {post.title}
         </Link>
       </h2>
-      <time dateTime={post.createdDate!} className="mb-2 block text-xs text-gray-600">
-        {format(parseISO(post.createdDate!), 'LLLL d, yyyy')}
+      <time dateTime={post.createdDate} className="mb-2 block text-xs text-gray-600">
+        {format(parseISO(post.createdDate), 'LLLL d, yyyy')}
       </time>
-      <div className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      <p>{post.shortDescription}</p>
     </div>
   )
 }
 
 export default function Home() {
-  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date!.start), new Date(b.date!.start)))
+  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date.start), new Date(b.date.start)))
 
   return (
     <div className="mx-auto max-w-xl py-8">
-      <h1 className="mb-8 text-center text-2xl font-black">Next.js + Contentlayer Example</h1>
+      <h1 className="mb-8 text-center text-2xl font-black">Azuma&#39;s Blog</h1>
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
