@@ -24,9 +24,6 @@ export default function Page({ params }: { params: { slug: string } }) {
       </Head>
       <article className="mx-auto max-w-2xl py-16">
         <div className="mb-6 text-center">
-          <Link href="/" className="text-center text-sm font-bold uppercase text-blue-700">Home</Link>
-        </div>
-        <div className="mb-6 text-center">
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
           <time dateTime={post.createdDate} className="text-sm text-slate-600">
             {format(parseISO(post.createdDate), 'LLLL d, yyyy')}

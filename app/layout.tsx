@@ -1,12 +1,19 @@
-import '@/styles/index.css'
+'use client';
+
+import localFont from 'next/font/local';
 import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import '@/styles/index.css'
+import { TopLoader, Providers } from '@/components';
 
-export const metadata = {
-  title: "Azuma's Blog",
-  description: 'Technical knowledge',
-}
+import { metadata } from './meta'
+
+const font = localFont({
+  src: '../public/fonts/ibm-plex-sans-var.woff2',
+  weight: '400',
+  variable: '--font-wibb',
+  display: 'swap',
+});
 
 export default function RootLayout({
   children,
@@ -14,8 +21,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={font.variable}>
+      <body>
+        <TopLoader
+          color={`var(--primary)`}
+          easing="ease"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={2.5}
+          crawl={true}
+          showSpinner={false}
+          speed={200}
+        />
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
