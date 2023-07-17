@@ -15,8 +15,28 @@ export const Post = defineDatabase(() => ({
     },
   },
   properties: {
+    title: {
+      name: 'Title',
+      required: true,
+    },
+    status: {
+      name: 'Status',
+      required: true,
+    },
+    date: {
+      name: 'Date',
+      required: true,
+    },
     createdDate: {
       name: 'Created time',
+      required: true,
+    },
+    shortDescription: {
+      name: 'Short description',
+    },
+    createdBy: {
+      name: 'Created by',
+      required: true,
     },
   },
   computedFields: {
