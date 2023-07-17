@@ -11,13 +11,27 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.6",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-tooltip": "^1.0.6",
+    "class-variance-authority": "^0.6.1",
+    "clsx": "^2.0.0",
     "contentlayer": "0.3.2",
     "contentlayer-source-notion": "^0.0.1-alpha.26",
     "date-fns": "^2.30.0",
+    "framer-motion": "^10.12.21",
     "next": "13.4.7",
     "next-contentlayer": "0.3.2",
+    "next-themes": "^0.2.1",
+    "nextjs-toploader": "^1.4.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "@opentelemetry/api": "1.4.1",
+    "@opentelemetry/core": "1.13.0",
+    "@opentelemetry/exporter-trace-otlp-grpc": "0.39.1",
+    "@opentelemetry/resources": "1.13.0",
+    "@opentelemetry/sdk-trace-base": "1.13.0",
+    "@opentelemetry/sdk-trace-node": "1.13.0",
+    "@opentelemetry/semantic-conventions": "1.13.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",

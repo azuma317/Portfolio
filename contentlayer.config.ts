@@ -42,7 +42,7 @@ export const Post = defineDatabase(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (post) => `/posts/${post._id}`,
+      resolve: (post) => `/writing/${post._id}`,
     },
   },
 }))
