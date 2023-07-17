@@ -1,0 +1,9 @@
+{
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/(landing)/page": "/",
+  "/(landing)/dev/page": "/dev",
+  "/(landing)/projects/page": "/projects",
+  "/(landing)/writing/page": "/writing",
+  "/(landing)/writing/[slug]/page": "/writing/[slug]"
+}
