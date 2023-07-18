@@ -1,9 +1,0 @@
-{
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/(landing)/page": "app/(landing)/page.js",
-  "/(landing)/dev/page": "app/(landing)/dev/page.js",
-  "/(landing)/projects/page": "app/(landing)/projects/page.js",
-  "/(landing)/writing/page": "app/(landing)/writing/page.js",
-  "/(landing)/writing/[slug]/page": "app/(landing)/writing/[slug]/page.js"
-}
