@@ -10,7 +10,7 @@ interface LogoProps extends NextLinkProps {
 
 export default function Logo(props: LogoProps) {
   return (
-    <Link {...props} aria-label="Sam Wibb" className={props.className}>
+    <Link {...props} aria-label="Azuma" className={props.className}>
       <Image
         alt={name}
         className="rounded-full grayscale border-solid border-4 border-neutral-200 dark:border-white"
