@@ -3,7 +3,7 @@ import { allPosts } from 'contentlayer/generated'
 export default async function sitemap() {
   const routes = [
     '',
-    '/blog',
+    '/writing',
     '/projects',
     '/portfolio',
   ].map((route) => ({
@@ -12,7 +12,7 @@ export default async function sitemap() {
   }))
 
   const posts = allPosts.map((post) => ({
-    url: `https://pages.azumax.work/blog/${post.slug}`,
+    url: `https://pages.azumax.work/writing/${post.slug}`,
     lastModified: new Date(post.createdDate).toISOString().split('T')[0],
   }))
 
