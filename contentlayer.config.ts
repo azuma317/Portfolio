@@ -23,6 +23,10 @@ export const Post = defineDatabase(() => ({
       name: 'Status',
       required: true,
     },
+    slug: {
+      name: 'Slug',
+      required: true,
+    },
     date: {
       name: 'Date',
       required: true,
@@ -42,7 +46,7 @@ export const Post = defineDatabase(() => ({
   computedFields: {
     url: {
       type: 'string',
-      resolve: (post) => `/writing/${post._id}`,
+      resolve: (post) => `/writing/${post.slug}`,
     },
   },
 }))
