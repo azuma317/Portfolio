@@ -1,11 +1,10 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
 import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
-  return posts.map((post) => ({ params: { slug: post.slug } }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 async function getPosts() {
@@ -16,7 +15,7 @@ async function getPosts() {
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params
-  const post = allPosts.find((post) => post._id === slug)!
+  const post = allPosts.find((post) => post.slug === slug)!
   return (
     <>
       <Head>

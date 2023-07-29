@@ -1,7 +1,7 @@
 'use client';
 
 import Link, { LinkProps as NextLinkProps } from 'next/link';
-import { name, avatar } from '@/lib';
+import { name } from '@/lib';
 
 interface LogoProps extends NextLinkProps {
   className?: string
