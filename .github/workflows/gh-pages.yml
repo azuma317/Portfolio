@@ -24,6 +24,11 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      
+      - name: create .env.production
+        run: env | grep -e NOTION_TOKEN >> .env.production
+        env:
+          NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
 
       - name: install
         run: npm ci
