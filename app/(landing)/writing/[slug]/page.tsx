@@ -21,7 +21,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <article className="mx-auto max-w-2xl py-16">
+      <article className="mx-auto max-w-2xl py-16 prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:prose-invert">
         <div className="mb-6 text-center">
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
           <time dateTime={post.createdDate} className="text-sm text-slate-600">
