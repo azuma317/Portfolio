@@ -24,8 +24,8 @@ export default function Page({ params }: { params: { slug: string } }) {
       <article className="mx-auto max-w-2xl py-16 prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:prose-invert">
         <div className="mb-6 text-center">
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
-          <time dateTime={post.createdDate} className="text-sm text-slate-600">
-            {format(parseISO(post.createdDate), 'LLLL d, yyyy')}
+          <time dateTime={post.date.start} className="text-sm text-slate-600">
+            {format(parseISO(post.date.start), 'LLLL d, yyyy')}
           </time>
         </div>
         <div className="cl-post-body" dangerouslySetInnerHTML={{ __html: post.body.html }}></div>

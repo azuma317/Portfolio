@@ -10,8 +10,8 @@ function PostCard(post: Post) {
           {post.title}
         </Link>
       </h2>
-      <time dateTime={post.createdDate} className="mb-2 block text-xs text-gray-600">
-        {format(parseISO(post.createdDate), 'LLLL d, yyyy')}
+      <time dateTime={post.date.start} className="mb-2 block text-xs text-gray-600">
+        {format(parseISO(post.date.start), 'LLLL d, yyyy')}
       </time>
       <p>{post.shortDescription}</p>
     </div>
