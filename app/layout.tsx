@@ -1,7 +1,7 @@
 'use client';
 
 import localFont from 'next/font/local';
-import { Inter } from 'next/font/google'
+import Analytics from '@/components/google-analytics';
 
 import '@/styles/index.css'
 import { TopLoader, Providers } from '@/components';
@@ -22,6 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={font.variable}>
+      <head>
+        <Analytics />
+      </head>
       <body>
         <TopLoader
           color={`var(--primary)`}

@@ -26,9 +26,10 @@ jobs:
             ${{ runner.os }}-node-
       
       - name: create .env.production
-        run: env | grep -e NOTION_TOKEN >> .env.production
+        run: env | grep -e NOTION_TOKEN -e NEXT_PUBLIC_GA_ID >> .env.production
         env:
           NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
+          NEXT_PUBLIC_GA_ID: ${{secrets.NEXT_PUBLIC_GA_ID}}
 
       - name: install
         run: npm ci
