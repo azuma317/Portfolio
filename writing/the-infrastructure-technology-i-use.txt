@@ -1,6 +1,6 @@
 1:HL["/_next/static/media/32947550276bb3d0-s.p.woff2",{"as":"font","type":"font/woff2"}]
 2:HL["/_next/static/css/d65a756a4c2b82df.css",{"as":"style"}]
-0:["RJ7tbkLwtwNbr4AnvSRi-",[[["",{"children":["(landing)",{"children":["writing",{"children":[["slug","the-infrastructure-technology-i-use","d"],{"children":["__PAGE__?{\"slug\":\"the-infrastructure-technology-i-use\"}",{}]}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d65a756a4c2b82df.css","precedence":"next"}]],["$L4",["$","meta",null,{"name":"next-size-adjust"}]]]]]]
+0:["1WkCRt8IXKCODEs8F7Gun",[[["",{"children":["(landing)",{"children":["writing",{"children":[["slug","the-infrastructure-technology-i-use","d"],{"children":["__PAGE__?{\"slug\":\"the-infrastructure-technology-i-use\"}",{}]}]}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d65a756a4c2b82df.css","precedence":"next"}]],["$L4",["$","meta",null,{"name":"next-size-adjust"}]]]]]]
 5:I{"id":"4421","chunks":["477:static/chunks/477-84b3a46460abf7a7.js","119:static/chunks/119-0cb4570c2bf6f086.js","189:static/chunks/189-85827a6823cff6f1.js","185:static/chunks/app/layout-c4ff16100683b434.js"],"name":"","async":false}
 6:I{"id":"3211","chunks":["272:static/chunks/webpack-bdf8873657937347.js","253:static/chunks/bce60fc1-e034c6238301cd5b.js","769:static/chunks/769-4eaa22de9ceefc96.js"],"name":"","async":false}
 7:I{"id":"7929","chunks":["601:static/chunks/app/error-5b93421cc45de60d.js"],"name":"","async":false}
