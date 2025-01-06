@@ -35,6 +35,7 @@ export default function RootLayout({
           panelBackground="solid"
           scaling="100%"
           radius="full"
+          appearance="dark"
         >
           {children}
           <ThemePanel />
