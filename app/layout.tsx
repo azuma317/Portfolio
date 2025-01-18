@@ -60,7 +60,7 @@ export default function RootLayout({
         lora.variable,
       )}
     >
-      <body className="antialiased h-screen max-w-xl mx-4 lg:mx-auto">
+      <body className="antialiased h-screen max-w-2xl mx-4 lg:mx-auto">
         <Theme
           accentColor="mint"
           grayColor="gray"
