@@ -5,11 +5,13 @@ import React from "react";
 import { highlight } from "sugar-high";
 
 function Table({ data }) {
-  const headers = data.headers.map((header) => <th key={header}>{header}</th>);
-  const rows = data.rows.map((row) => (
-    <tr key={row.join("-")}>
-      {row.map((cell) => (
-        <td key={cell}>{cell}</td>
+  const headers = data.headers.map((header, index) => (
+    <th key={index}>{header}</th>
+  ));
+  const rows = data.rows.map((row, index) => (
+    <tr key={index}>
+      {row.map((cell, cellIndex) => (
+        <td key={cellIndex}>{cell}</td>
       ))}
     </tr>
   ));
@@ -47,8 +49,8 @@ function RoundedImage(props) {
 }
 
 function Code({ children, ...props }) {
-  const highlightedCode = highlight(children);
-  return <code {...props}>{highlightedCode}</code>;
+  const codeHTML = highlight(children);
+  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
 function slugify(str) {
