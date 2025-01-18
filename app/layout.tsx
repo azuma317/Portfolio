@@ -2,18 +2,18 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lora, Playfair_Display } from "next/font/google";
 import Footer from "./components/footer";
 import { Navbar } from "./components/nav";
 import { baseUrl } from "./sitemap";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
@@ -56,8 +56,8 @@ export default function RootLayout({
       lang="ja"
       className={cx(
         "text-black bg-white dark:text-white dark:bg-black",
-        geistSans.variable,
-        geistMono.variable,
+        playfair.variable,
+        lora.variable,
       )}
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
