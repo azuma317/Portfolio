@@ -23,7 +23,7 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="mr-8 flex h-full items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-200"
+                  className="mr-8 flex h-full items-center transition-all"
                 >
                   {name}
                 </Link>

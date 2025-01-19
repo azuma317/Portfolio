@@ -37,6 +37,10 @@ html {
   min-width: 360px;
 }
 
+a {
+  @apply hover:text-neutral-800 dark:hover:text-emerald-400;
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
