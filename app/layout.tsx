@@ -16,6 +16,7 @@ const lora = Lora({
   variable: "--font-lora",
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
