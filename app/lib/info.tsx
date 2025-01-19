@@ -10,7 +10,7 @@ export const about = () => {
         <b>projects</b>
       </Link>{' '}
       and{' '}
-      <Link href="/writing">
+      <Link href="/blog">
         <b>interests</b>
       </Link>
       .
