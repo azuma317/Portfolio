@@ -10,11 +10,11 @@ export default function Home() {
       <p className="my-4 max-w-[500px] text-neutral-800 dark:text-neutral-200">
         I'm currently based in Fukuoka and deeply involved in a diverse range of
         exciting{' '}
-        <Link href="/projects">
+        <Link href="/projects" className="underline">
           <b>projects</b>
         </Link>{' '}
         and{' '}
-        <Link href="/blog">
+        <Link href="/blog" className="underline">
           <b>interests</b>
         </Link>
         .
@@ -25,7 +25,7 @@ export default function Home() {
         <b>{yearsSinceStart - 1} years</b>. While my expertise spans across the
         full software development stack, I am particularly passionate about
         Infrastructure Development.{' '}
-        <Link href="/dev">
+        <Link href="/dev" className="underline">
           <b>Read on</b>
         </Link>
         .
