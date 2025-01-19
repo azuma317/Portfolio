@@ -1,7 +1,7 @@
-import fs from "node:fs";
-import path from "node:path";
-import { getBlogPosts } from "app/blog/utils";
-import { baseUrl } from "app/sitemap";
+import fs from 'node:fs';
+import path from 'node:path';
+import { getBlogPosts } from 'app/blog/utils';
+import { baseUrl } from 'app/sitemap';
 
 export default async function rssFeed() {
   const allBlogs = await getBlogPosts();
@@ -18,13 +18,13 @@ export default async function rssFeed() {
         `<item>
           <title>${post.metadata.title}</title>
           <link>${baseUrl}/blog/${post.slug}</link>
-          <description>${post.metadata.summary || ""}</description>
+          <description>${post.metadata.summary || ''}</description>
           <pubDate>${new Date(
             post.metadata.publishedAt,
           ).toUTCString()}</pubDate>
         </item>`,
     )
-    .join("\n");
+    .join('\n');
 
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
@@ -36,5 +36,5 @@ export default async function rssFeed() {
     </channel>
   </rss>`;
 
-  fs.writeFileSync(path.join(process.cwd(), "public", "rss.xml"), rssFeed);
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'rss.xml'), rssFeed);
 }

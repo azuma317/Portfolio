@@ -1,4 +1,4 @@
-import { about, bio, name } from "./lib/info";
+import { about, bio, name } from './lib/info';
 
 export default function Home() {
   return (
