@@ -1,6 +1,6 @@
 import './globals.css';
 import '@radix-ui/themes/styles.css';
-import { Theme, ThemePanel } from '@radix-ui/themes';
+import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
 import { Lora, Playfair_Display } from 'next/font/google';
 import Footer from './components/footer';
@@ -76,7 +76,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          {/* <ThemePanel /> */}
         </Theme>
       </body>
     </html>
