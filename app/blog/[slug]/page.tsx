@@ -80,10 +80,10 @@ export default function Blog({ params }) {
       <script type="application/ld+json" suppressHydrationWarning>
         {JSON.stringify(jsonLd)}
       </script>
-      <h1 className="title font-bold text-3xl leading-tight mt-4 mb-2">
+      <h1 className="title mt-4 mb-2 font-bold text-3xl leading-tight">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm text-neutral-600 dark:text-neutral-400">
+      <div className="mt-2 mb-8 flex items-center justify-between text-neutral-600 text-sm dark:text-neutral-400">
         <p>{formatDate(post.metadata.publishedAt)}</p>
       </div>
       <article className="prose prose-lg max-w-none">
