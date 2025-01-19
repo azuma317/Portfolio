@@ -61,7 +61,7 @@ export default function RootLayout({
         lora.variable,
       )}
     >
-      <body className="mx-4 h-screen max-w-2xl antialiased lg:mx-auto">
+      <body className="mx-4 max-w-2xl antialiased lg:mx-auto">
         <Theme
           accentColor="mint"
           grayColor="gray"
@@ -69,12 +69,13 @@ export default function RootLayout({
           scaling="100%"
           radius="full"
           appearance="dark"
+          className="min-h-screen flex flex-col"
         >
-          <main className="flex h-full min-w-0 flex-auto flex-col px-2 md:px-0">
-            <Navbar />
+          <Navbar />
+          <main className="flex flex-grow min-w-0 flex-col px-2 md:px-0">
             {children}
-            <Footer />
           </main>
+          <Footer />
           {/* <ThemePanel /> */}
         </Theme>
       </body>
