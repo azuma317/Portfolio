@@ -7,6 +7,9 @@ const navItems = {
   '/blog': {
     name: 'Blog',
   },
+  '/projects': {
+    name: 'Project',
+  },
 };
 
 export function Navbar() {
@@ -17,7 +20,7 @@ export function Navbar() {
           className="fade relative flex h-14 scroll-pr-6 flex-row items-start px-0 pb-0 md:relative md:overflow-auto"
           id="nav"
         >
-          <div className="flex h-full flex-row space-x-0 pr-10">
+          <div className="flex h-full flex-row">
             {Object.entries(navItems).map(([path, { name }]) => {
               return (
                 <Link
