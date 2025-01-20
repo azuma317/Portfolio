@@ -3,8 +3,8 @@ import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
 import { Lora, Playfair_Display } from 'next/font/google';
-import Footer from './components/footer';
-import { Navbar } from './components/nav';
+import Footer from './components/Footer';
+import { Navbar } from './components/Nav';
 import { baseUrl } from './sitemap';
 
 const playfair = Playfair_Display({

@@ -1,4 +1,4 @@
-import { SkillCard } from './components/SkillCard';
+import { SkillCard } from 'app/components/SkillCard';
 
 export default function About() {
   const skills = [
