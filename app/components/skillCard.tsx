@@ -40,23 +40,6 @@ export function SkillCard({
           {description}
         </p>
       )}
-      {links && (
-        <ul className="space-y-2 mb-4">
-          {Object.entries(links).map(([platform, url]) => (
-            <li key={platform}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-200"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">{platform}</p>
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
       {details && (
         <ul className="list-disc list-inside space-y-2 text-neutral-600 dark:text-neutral-400">
           {details.map((detail, i) => (
@@ -77,6 +60,23 @@ export function SkillCard({
             </div>
           ))}
         </div>
+      )}
+      {links && (
+        <ul className="space-y-2 mb-4">
+          {Object.entries(links).map(([platform, url]) => (
+            <li key={platform}>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-200"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">{platform}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
