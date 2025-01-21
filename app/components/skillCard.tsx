@@ -21,7 +21,7 @@ export function SkillCard({
   links,
 }: SkillCardProps) {
   return (
-    <div className="p-6 rounded-lg border border-neutral-200 dark:border-neutral-800">
+    <div className="p-6">
       <h2 className="text-xl font-medium mb-4">{title}</h2>
       {techs && (
         <div className="flex flex-wrap gap-2 mb-4">
@@ -69,7 +69,7 @@ export function SkillCard({
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-200"
+                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-emerald-400"
               >
                 <ArrowIcon />
                 <p className="ml-2 h-7">{platform}</p>
@@ -78,6 +78,7 @@ export function SkillCard({
           ))}
         </ul>
       )}
+      <hr className="mt-6 border-neutral-200 dark:border-neutral-800" />
     </div>
   );
 }
