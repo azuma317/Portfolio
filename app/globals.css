@@ -91,7 +91,7 @@ a {
 }
 
 .prose p {
-  @apply my-4 text-xl text-neutral-800 dark:text-neutral-200 leading-8;
+  @apply my-4 text-lg text-neutral-800 dark:text-neutral-200 leading-8;
 }
 
 .prose h1 {
