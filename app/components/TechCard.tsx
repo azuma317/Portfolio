@@ -1,4 +1,4 @@
-import ArrowIcon from 'app/components/icons/ArrowIcon';
+import { SocialLinks } from 'app/components/SocialLinks';
 
 interface TechCardProps {
   title: string;
@@ -62,20 +62,12 @@ export function TechCard({
         </div>
       )}
       {links && (
-        <div className="flex flex-wrap gap-4 mb-4">
-          {Object.entries(links).map(([platform, url]) => (
-            <a
-              key={platform}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-emerald-400"
-            >
-              <ArrowIcon />
-              <p className="ml-2 h-7">{platform}</p>
-            </a>
-          ))}
-        </div>
+        <SocialLinks
+          links={Object.entries(links).map(([label, href]) => ({
+            label,
+            href,
+          }))}
+        />
       )}
       <hr className="mt-6 border-neutral-200 dark:border-neutral-800" />
     </div>
