@@ -1,6 +1,6 @@
 import ArrowIcon from 'app/components/icons/ArrowIcon';
 
-interface SkillCardProps {
+interface TechCardProps {
   title: string;
   techs?: string[];
   description?: string;
@@ -12,14 +12,14 @@ interface SkillCardProps {
   links?: Record<string, string>;
 }
 
-export function SkillCard({
+export function TechCard({
   title,
   techs,
   description,
   details,
   sections,
   links,
-}: SkillCardProps) {
+}: TechCardProps) {
   return (
     <div className="p-6">
       <h2 className="text-xl font-medium mb-4">{title}</h2>
@@ -36,12 +36,12 @@ export function SkillCard({
         </div>
       )}
       {description && (
-        <p className="mb-4 text-neutral-600 dark:text-neutral-400">
+        <p className="mb-4 text-neutral-800 dark:text-neutral-200">
           {description}
         </p>
       )}
       {details && (
-        <ul className="list-disc list-inside space-y-2 text-neutral-600 dark:text-neutral-400">
+        <ul className="list-disc list-inside space-y-2 text-neutral-800 dark:text-neutral-200">
           {details.map((detail, i) => (
             <li key={i}>{detail}</li>
           ))}
@@ -52,7 +52,7 @@ export function SkillCard({
           {sections.map((section, i) => (
             <div key={i}>
               <h3 className="font-medium mb-2">{section.subtitle}</h3>
-              <ul className="list-disc list-inside space-y-2 text-neutral-600 dark:text-neutral-400">
+              <ul className="list-disc list-inside space-y-2 text-neutral-800 dark:text-neutral-200">
                 {section.details.map((detail, j) => (
                   <li key={j}>{detail}</li>
                 ))}
@@ -62,21 +62,20 @@ export function SkillCard({
         </div>
       )}
       {links && (
-        <ul className="space-y-2 mb-4">
+        <div className="flex flex-wrap gap-4 mb-4">
           {Object.entries(links).map(([platform, url]) => (
-            <li key={platform}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-emerald-400"
-              >
-                <ArrowIcon />
-                <p className="ml-2 h-7">{platform}</p>
-              </a>
-            </li>
+            <a
+              key={platform}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-emerald-400"
+            >
+              <ArrowIcon />
+              <p className="ml-2 h-7">{platform}</p>
+            </a>
           ))}
-        </ul>
+        </div>
       )}
       <hr className="mt-6 border-neutral-200 dark:border-neutral-800" />
     </div>
