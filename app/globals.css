@@ -37,6 +37,10 @@ html {
   min-width: 360px;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   @apply hover:text-neutral-800 dark:hover:text-emerald-400;
 }
