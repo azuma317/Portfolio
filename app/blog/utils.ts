@@ -36,7 +36,6 @@ function parseFrontmatter(fileContent: string) {
     }
   }
 
-  console.log(metadata);
   return { metadata: metadata as Metadata, content };
 }
 
