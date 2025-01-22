@@ -29,6 +29,16 @@ export function BlogPosts() {
                 {post.metadata.title}
               </p>
             </div>
+            <div className="flex flex-wrap space-x-2">
+              {post.metadata.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-sm text-neutral-600 dark:text-neutral-400"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
           </Link>
         ))}
     </div>

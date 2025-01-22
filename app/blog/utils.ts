@@ -5,6 +5,7 @@ type Metadata = {
   title: string;
   publishedAt: string;
   summary: string;
+  tags: string[];
   image?: string;
 };
 
@@ -18,11 +19,24 @@ function parseFrontmatter(fileContent: string) {
 
   for (const line of frontMatterLines) {
     const [key, ...valueArr] = line.split(': ');
-    let value = valueArr.join(': ').trim();
+    let value: string | string[] = valueArr.join(': ').trim();
     value = value.replace(/^['"](.*)['"]$/, '$1');
-    metadata[key.trim() as keyof Metadata] = value;
+    if (key.trim() === 'tags') {
+      value = value
+        .replace(/^\[(.*)\]$/, '$1')
+        .split(',')
+        .map((tag) => tag.trim().replace(/^['"](.*)['"]$/, '$1'))
+        .filter((tag) => tag.length > 0);
+      if (value.length === 1 && value[0] === '') {
+        value = [];
+      }
+      metadata[key.trim()] = value as string[];
+    } else {
+      metadata[key.trim()] = value as string;
+    }
   }
 
+  console.log(metadata);
   return { metadata: metadata as Metadata, content };
 }
 
