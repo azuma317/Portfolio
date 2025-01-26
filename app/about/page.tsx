@@ -61,6 +61,14 @@ export default function About() {
             'Creating custom modules',
           ],
         },
+        {
+          subtitle: 'Docker',
+          details: [
+            'Dockerizing applications',
+            'Docker Compose setup',
+            'Dockerfile optimization',
+          ],
+        },
       ],
     },
     {
@@ -83,15 +91,13 @@ export default function About() {
         {
           subtitle: 'Nginx, Apache',
           details: [
-            'Web servers',
-            'Reverse proxy',
-            'Load balancer',
-            'SSL',
-            'MPM',
+            'Web server and proxy server setup',
+            'SSL configuration',
+            'Optimization such as MPM',
           ],
         },
         {
-          subtitle: 'PHP-FPM, Node.js',
+          subtitle: 'PHP-FPM, Node.js, Rails',
           details: ['Application servers'],
         },
       ],
@@ -111,10 +117,26 @@ export default function About() {
         'QuickSight',
         'Athena',
       ],
+      details: [
+        'Prometheus & Grafana setup for monitoring',
+        'Elasticsearch & Logstash setup for logging',
+        'Trino setup for querying logs',
+        'Blackbox Exporter for monitoring endpoints',
+        'Alloy for monitoring Linux servers',
+        'Fluentd for log aggregation',
+        'Redash, QuickSight, Athena for visualization',
+      ],
     },
     {
       title: 'Programming Languages',
       techs: ['TypeScript', 'JavaScript', 'Swift', 'PHP', 'Dart', 'Bash'],
+      details: [
+        'TypeScript & JavaScript for web development',
+        'Swift for iOS development',
+        'PHP for web development',
+        'Dart for Flutter development',
+        'Bash for shell scripting',
+      ],
     },
     {
       title: 'Frameworks & Libraries',
@@ -128,6 +150,15 @@ export default function About() {
         'Flutter',
         'Laravel',
       ],
+      details: [
+        'React & Next.js for web development',
+        'Astro for static site generation',
+        'Hono for server-side rendering',
+        'Tailwind CSS for styling',
+        'PNPM for package management',
+        'Flutter for mobile app development',
+        'Laravel for web development',
+      ],
     },
     {
       title: 'Development Tools',
@@ -140,6 +171,14 @@ export default function About() {
         'GitLab',
         'Notion',
         'Postman',
+      ],
+      details: [
+        'Docker for containerization',
+        'Vite & Turbopack for development',
+        'VSCode for code editing',
+        'GitHub & GitLab for version control',
+        'Notion for documentation',
+        'Postman for API testing',
       ],
     },
   ];
