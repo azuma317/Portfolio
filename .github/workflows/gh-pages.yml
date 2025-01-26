@@ -1,9 +1,9 @@
 name: github pages
 
 on:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -62,7 +62,7 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
-      # - name: Deploy GitHub Pages
-      #   uses: actions/deploy-pages@v4
-      #   with:
-      #     artifact_path: ./out
+      - name: Deploy GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_path: ./out
