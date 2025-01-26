@@ -6,39 +6,63 @@ on:
   #     - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: setup node
-        uses: actions/setup-node@v3
+      - name: Setup node
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.16.1'
+          node-version: '22.12.0'
+          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '9.15.2'
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
-      
-      - name: create .env.production
+            npm-${{ runner.os }}-
+
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: nextjs-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.json') }}
+          restore-keys: |
+            nextjs-${{ runner.os }}-
+
+      - name: Create .env.production
         run: env | grep -e NOTION_TOKEN -e NEXT_PUBLIC_GA_ID >> .env.production
         env:
           NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
           NEXT_PUBLIC_GA_ID: ${{secrets.NEXT_PUBLIC_GA_ID}}
 
-      - name: install
-        run: npm ci
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: build
-        run: npm run build
+      - name: Build
+        run: pnpm run build
 
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./out
+      - name: Create .nojekyll file
+        run: touch out/.nojekyll
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
+      # - name: Deploy GitHub Pages
+      #   uses: actions/deploy-pages@v4
+      #   with:
+      #     artifact_path: ./out

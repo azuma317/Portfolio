@@ -3,6 +3,9 @@ import path from 'node:path';
 import { getBlogPosts } from 'app/blog/utils';
 import { baseUrl } from 'app/sitemap';
 
+export const dynamic = 'force-static';
+export const revalidate = 60;
+
 export default async function rssFeed() {
   const allBlogs = await getBlogPosts();
 
